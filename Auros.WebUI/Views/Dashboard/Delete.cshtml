@@ -1,0 +1,19 @@
+﻿@model Card
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "_UserDashboardLayout";
+}
+
+<div class="container">
+    <form method="post" style="margin:auto; width: 40%;margin-top: 50px;">
+        <h1>Silmeye eminsiniz</h1>
+        <div class="mb-3">
+            @*<label for="exampleInputEmail1" class="form-label">Card Number</label>*@
+            <input type="hidden" asp-for="Id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <input type="hidden" asp-for="ExpireDate" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <input type="hidden" asp-for="CardNumber" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" readonly>
+        </div>
+        <button type="submit" class="btn btn-primary">Yes</button>
+        <button asp-controller="Dashboard" asp-action="Cards" class="btn btn-primary">No</button>
+    </form>
+</div>

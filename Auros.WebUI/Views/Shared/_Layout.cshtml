@@ -1,0 +1,147 @@
+﻿@model Subscribe
+<!DOCTYPE html>
+<html lang="en">
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Auros - @ViewBag.Title</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
+    <link rel="shortcut icon" href="~/Assets/img/home.png" type="image/x-icon">
+    <link rel="stylesheet" href="~/Assets/SCSS/bootstrap.css">
+    <link rel="stylesheet" href="~/Assets/CSS/style.css">
+</head>
+<body>
+    <section id="search">
+        <input type="text" onfocus="this.value=' '"><span onclick="document.querySelector('#search').style.display='none'">X</span>
+    </section>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-7 lefts">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-3 left">
+                            <div class="box">
+                                <a asp-controller="Home" asp-action="Index">
+                                    <img src="~/Assets/img/Logo.svg" alt="Image">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 right">
+                            <ul class="d-flex">
+                                <li><a asp-controller="Home" asp-action="Index">Home<i id="arrowdown" class="fas fa-angle-down"></i></a></li>
+                                <li><a href="#">Shop<i id="arrowdown" class="fas fa-angle-down"></i></a></li>
+                                <li><a href="#">Product<i id="arrowdown" class="fas fa-angle-down"></i></a></li>
+                                <li><a asp-controller="Home" asp-action="Store">Store<!--<i id="arrowdown" class="fas fa-angle-down"></i>--></a></li>
+                                <li><a href="#">Blog<i id="arrowdown" class="fas fa-angle-down"></i></a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-5 rights">
+                    <ul class="d-flex">
+                        <li><a href="#"><i class="fas far fas fa-search" onclick="document.querySelector('#search').style.display='block'"></i></a></li>
+                        <li><a asp-controller="Account" asp-action="Login"><i class="fas far fa-user"></i></a></li>
+                        <li><a href="#"><i class="fas far fas fa-cart-plus"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div>
+        @RenderBody()
+    </div>
+    <section id="seventh">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-lg-3">
+                    <ul>
+                        <li>
+                            <div class="box">
+                                <img src="~/Assets/img/Logo.svg" alt="Image">
+                            </div>
+                        </li>
+                        <li>
+                            <p>
+                                2593 Timbercrest Road, Chisana, Alaska Badalas
+                                United State
+                            </p>
+                        </li>
+                        <li>
+                            <p>(+91)7-723-4608</p>
+                        </li>
+                        <li>
+                            <a href="#">Aurosfurniture@domain.vn</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <ul>
+                        <li>
+                            <h2>Our Products</h2>
+                        </li>
+                        <li><a href="#">Checkout</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <ul>
+                        <li>
+                            <h2>Useful Links</h2>
+                        </li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <ul>
+                        <li>
+                            <h2>Newsletter</h2>
+                        </li>
+                        <li><p>Stay Updated on all that’s new add noteworthy</p></li>
+                        <li>
+                            <form method="post">
+                                @if (!string.IsNullOrWhiteSpace(ViewBag.Message))
+                                {
+                                    if (@ViewBag.Message == "Ugurla abune oldunuz")
+                                    {
+                                        <p class="alert alert-info message"><i class="fab far fa-check-circle"></i>@ViewBag.Message</p>
+                                    }
+                                    else
+                                    {
+                                        <p class="alert alert-warning message">@ViewBag.Message</p>
+                                    }
+                                }
+                                <input type="email" name="Email"
+                                       placeholder="Enter your e-mail..." asp-for="Email"><button>Subscribe</button>
+                            </form>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-facebook"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#">
+                                <i class="fab fa-instagram"></i>
+                            </a><a href="#"><i class="fab fa-viber"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <hr>
+            <div class="row align-items-center justify-content-between">
+                <div class="col-lg-6">
+                    <p>Copyright © 2019 <a href="#">Auros</a>. All rights reserved.</p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="box">
+                        <img src="~/Assets/img/paypal.png" alt="Image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <title>Sign in</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300&family=Work+Sans:wght@600&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
+    <link rel="shortcut icon" href="Assets/img/sign-in.png" type="image/x-icon">
+    <link rel="stylesheet" href="Assets/SCSS/bootstrap.css">
+    <link rel="stylesheet" href="Assets/CSS/signin.css">
+    <style>
+        .home {
+            margin-left: 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <a asp-controller="Home" asp-action="Index"><div class="btn btn-success home">Home</div></a>
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>

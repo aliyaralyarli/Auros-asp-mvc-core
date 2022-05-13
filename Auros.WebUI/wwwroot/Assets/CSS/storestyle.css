@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none !important;
+  scroll-behavior: smooth;
+  background-color: #d2dae2;
+}
+
+.coming-soon {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.coming-soon h2 {
+  font-size: 5rem;
+  font-weight: bold;
+  padding: 3rem;
+}
+
+.coming-soon .countdown {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.coming-soon .countdown .day, .coming-soon .countdown .hour, .coming-soon .countdown .minute, .coming-soon .countdown .second {
+  font-size: 3rem;
+}
+
+.coming-soon .waiting {
+  height: 50vh;
+}
+/*# sourceMappingURL=storestyle.css.map */

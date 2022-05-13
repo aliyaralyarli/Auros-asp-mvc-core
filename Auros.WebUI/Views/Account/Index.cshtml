@@ -1,0 +1,54 @@
+﻿@model SignInFormModel
+@{
+    ViewData["Title"] = "Registration";
+    Layout = "_Signin";
+}
+<div class="login-page">
+    <div class="form">
+        <form class="login-form" method="post">
+            @if (!string.IsNullOrWhiteSpace(ViewBag.Message))
+            {
+                if (@ViewBag.Message == "Ugurla qeydiyyatdan kecdiniz")
+                {
+                    <p class="alert alert-info message"><i class="fab far fa-check-circle"></i>@ViewBag.Message</p>
+                }
+                else
+                {
+                    <p class="alert alert-warning message">@ViewBag.Message</p>
+                }
+            }
+            <input type="text" name="Username" placeholder="Username" asp-for="Username" />
+            <input type="email" name="Email" placeholder="Email address" asp-for="Email" />
+            <input type="password" class="pass" name="Password" placeholder="Password" asp-for="Password" />
+            <button>Create</button>
+            <p class="message1">Already registered? <a asp-controller="Account" asp-action="Login">Sign In</a></p>
+        </form>
+    </div>
+</div>
+@*@section addcss{
+<link href="~/Assets/lib/toastr.js/toastr.css" rel="stylesheet" />
+}
+@section addjs{
+<script src="~/Assets/lib/toastr.js/toastr.min.js"></script>
+<script>
+      toastr.options = {
+    "closeButton": true,
+    "debug": false,
+    "newestOnTop": false,
+    "progressBar": true,
+    "positionClass": "toast-bottom-right",
+    "preventDuplicates": true,
+    "onclick": null,
+    "showDuration": "300",
+    "hideDuration": "1000",
+    "timeOut": "5000",
+    "extendedTimeOut": "1000",
+    "showEasing": "swing",
+    "hideEasing": "linear",
+    "showMethod": "fadeIn",
+    "hideMethod": "fadeOut"
+</script>
+}*@
+
+<script src="~/Assets/JS/app.js"></script>
+

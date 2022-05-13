@@ -1,0 +1,57 @@
+﻿@model List<Card>
+@{
+    ViewData["Title"] = "Cards";
+    Layout = "_UserDashboardLayout";
+}
+<link rel="stylesheet" href="~/Assets/CSS/table.css">
+
+<table class="content-table">
+
+    @if (Model.Any())
+    {
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>@Sidebar.Kart_Nömrəsi</th>
+                <th>@Sidebar.Bitmə_Tarixi</th>
+                <th>@Sidebar.Yeniləmə_tarixi</th>
+                <th></th>
+            </tr>
+        </thead>
+        @foreach (var item in Model)
+        {
+            <tbody>
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.CardNumber</td>
+                    <td>@item.ExpireDate</td>
+                    <td>@item.UpdateTime</td>
+                    <td>
+                        <a asp-controller="Dashboard" asp-action="Edit" asp-route-value="@item.CardNumber" class="edit">@Sidebar.Düzəliş_et</a>
+                        <a asp-controller="Dashboard" asp-action="Add" class="insert">@Sidebar.Daxil_et</a>
+                        <a asp-controller="Dashboard" asp-action="Delete" asp-route-value="@item.Id" class="delete">@Sidebar.Sil</a>
+                    </td>
+                </tr>
+            </tbody>
+        }
+    }
+    else
+    {
+        <thead>
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <p class="card-message">@Sidebar.Kart_Tapılmadı</p>
+                    <a class="add" asp-controller="Dashboard" asp-action="Add">@Sidebar.Yenisini_əlavə_et</a>
+                </td>
+            </tr>
+        </tbody>
+    }
+</table>

@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/Assets/SCSS/bootstrap.css">
+    <link rel="stylesheet" href="~/Assets/CSS/signin.css">
+    <style>
+        .home {
+            margin-left: 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <a asp-controller="Home" asp-action="Index"><div class="btn btn-success home">Home</div></a>
+    <div>
+        @RenderBody()
+    </div>
+
+</body>
+</html>
