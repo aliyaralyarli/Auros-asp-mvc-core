@@ -13,11 +13,5 @@ namespace Auros.WebUI.Models.Entities
         public DateTime? UpdateDate { get; set; }
         public DateTime? DeleteDate { get; set; }
         public byte[] ImageData { get; set; }
-
-
-        //public virtual ICollection<ProductImage> Images { get; set; }
-
-        //[NotMapped]
-        //public ImageItem[] Files { get; set; }
     }
 }

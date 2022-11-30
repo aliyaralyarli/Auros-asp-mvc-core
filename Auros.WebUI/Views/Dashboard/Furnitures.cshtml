@@ -1,4 +1,4 @@
-﻿@model Product
+﻿
 @{
     ViewData["Title"] = "Furnitures";
 }
@@ -10,7 +10,7 @@
 
 <a asp-controller="Home" asp-action="Index"><div class="btn btn-success home">Back</div></a>
 <section>
-    <form asp-action="RetrieveImage"
+    <form asp-action="RetriveImage"
           asp-controller="Dashboard"
           method="post">
         <button type="submit">Show Latest Image</button>
@@ -33,7 +33,6 @@
         </ul>
     </div> -->
     <div class="main">
-
         <div class="head-section">
             <div class="col-6">
                 <h2>Products</h2>
@@ -76,7 +75,7 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td data-label="Account">#3412</td>
+                        <td data-label="Account">#45453</td>
                         <td data-label="Due Date"><img src="@ViewBag.ImageDataUrl" class="tab-img">Manoj</td>
                         <td data-label="Amount">Lorem ispum dummy text industry.</td>
                         <td data-label="Period">03/01/2022</td>
@@ -99,17 +98,17 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <script>
-        $(document).ready(function () {
-            $(".user").click(function () {
-                $(".profile-div").toggle(1000);
-            });
-            $(".hicon:nth-child(1)").click(function () {
-                $(".notification-div").toggle(1000);
-            });
-            $(".sicon").click(function () {
-                $(".search").toggle(1000);
-            });
+    $(document).ready(function () {
+        $(".user").click(function () {
+            $(".profile-div").toggle(1000);
         });
+        $(".hicon:nth-child(1)").click(function () {
+            $(".notification-div").toggle(1000);
+        });
+        $(".sicon").click(function () {
+            $(".search").toggle(1000);
+        });
+    });
 </script>
 
 <script type="text/javascript">

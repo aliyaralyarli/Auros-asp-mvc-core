@@ -38,10 +38,6 @@ namespace Auros.WebUI.Controllers
                 }
                 return View();
             }
-            //else
-            //{
-            //    ViewBag.Message = "Ugursuz";
-            //}
 
             return View(subscribe);
         }

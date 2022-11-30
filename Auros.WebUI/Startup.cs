@@ -23,7 +23,7 @@ namespace Auros.WebUI
 
             services.AddSession(cfg =>
             {
-                cfg.IdleTimeout = TimeSpan.FromMinutes(5);
+                cfg.IdleTimeout = TimeSpan.FromMinutes(0.5);
             });
 
             services.AddRouting(cfg =>

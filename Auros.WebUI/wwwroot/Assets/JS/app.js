@@ -12,7 +12,7 @@ window.onscroll = function () {
 };
 
 const countdown = () => {
-  const countDate = new Date("May 31,2022 00:00:00").getTime();
+  const countDate = new Date("May 31,2024 00:00:00").getTime();
   const now = new Date().getTime();
   const difference = countDate - now;
 

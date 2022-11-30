@@ -1,13 +1,11 @@
 ﻿using Auros.WebUI.Models.DataContexts;
 using Auros.WebUI.Models.Entities;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace Auros.WebUI.Controllers
 {
@@ -45,7 +43,6 @@ namespace Auros.WebUI.Controllers
             {
                 return RedirectToAction("Login", "Account");
             }
-
         }
 
         public IActionResult Add()
@@ -86,6 +83,7 @@ namespace Auros.WebUI.Controllers
             var item = db.Cards.FirstOrDefault(c => c.Id == value);
             return View(item);
         }
+        
 
         [HttpPost]
         [ActionName("Delete")]
@@ -97,7 +95,6 @@ namespace Auros.WebUI.Controllers
             db.SaveChanges();
             return RedirectToAction("Cards", "Dashboard");
         }
-
 
         public IActionResult AddFurniture()
         {
@@ -127,23 +124,37 @@ namespace Auros.WebUI.Controllers
         }
 
         [HttpPost]
-        public ActionResult RetrieveImage()
+        public ActionResult RetriveImage()
         {
             Product img = db.Products.OrderByDescending
             (i => i.Id).SingleOrDefault();
             string imageBase64Data =
-        Convert.ToBase64String(img.ImageData);
+            Convert.ToBase64String(img.ImageData);
             string imageDataURL =
-        string.Format("data:image/jpg;base64,{0}",
-        imageBase64Data);
+            string.Format("data:image/jpg;base64,{0}",
+            imageBase64Data);
             ViewBag.ImageTitle = img.BrandName;
             ViewBag.ImageDataUrl = imageDataURL;
             return View("Furnitures");
         }
 
+        public ActionResult ShowAll()
+        {
+            var data = db.Products.ToList();
+            return View(data);
+        }
+
         public IActionResult Furnitures()
         {
-            return View();
+            var sesion = HttpContext.Session.Get("username");
+            if (sesion != null)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login", "Account");
+            }
         }
     }
 }

@@ -17,10 +17,5 @@ namespace Auros.WebUI.Models.DataContexts
         public DbSet<Card> Cards { get; set; }
 
         public DbSet<Product> Products { get; set; }
-
-        //protected override void OnModelCreating(ModelBuilder builder)
-        //{
-        //    builder.Entity<Subscribe>().HasIndex(c => c.Email).IsUnique();
-        //}
     }
 }

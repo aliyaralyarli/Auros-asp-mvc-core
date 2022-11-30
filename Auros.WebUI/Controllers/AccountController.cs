@@ -12,8 +12,6 @@ namespace Auros.WebUI.Controllers
     public class AccountController : Controller
     {
         readonly AurosDbContext db;
-        //readonly UserManager<AppUser> userManager;
-        //readonly SignInManager<AppUser> signInManager;
 
         public AccountController(AurosDbContext db)
         {
@@ -84,21 +82,6 @@ namespace Auros.WebUI.Controllers
                     ViewBag.Message = "Istifadeci adi ve ya sifre yanlisdir";
                 }
                 return View(user);
-                //if (db.Users.Any(c => c.Username == user.Username.ToLower().Trim()) && db.Users.Any(c => c.Password == user.Password.ToLower().Trim()))
-                //{
-                //    ViewBag.Message = "Ugurlu";
-                //}
-                //else if (!db.Users.Any(c => c.Username == user.Username.ToLower().Trim()))
-                //{
-                //    ModelState.Clear();
-                //    ViewBag.Message = "Istifadeci tapilmadi";
-                //}
-                //else if (db.Users.Any(c => c.Username == user.Username.ToLower().Trim())  && !db.Users.Any(c => c.Password == user.Password.ToLower().Trim()))
-                //{
-                //    ModelState.Clear();
-                //    ViewBag.Message = "Sifre yanlisdir";
-                //}
-                //return View();
             }
             else
             {
